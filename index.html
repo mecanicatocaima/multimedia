@@ -1,25 +1,52 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mi proyecto</title>
 </head>
+
 <body>
-    <img src="https://images.pexels.com/photos/40065053/pexels-photo-40065053.jpe">
-    <iframe width="560" height="315"
-src="https://www.pexels.com/es-es/download/video/39207238/"
-title="Video del proyecto"
-allowfullscreen></iframe>
-<audio id="musica.mp3"></audio>
-<button id="botonMusica">▶ Reproducir música</button>
-<script>
-    const audio = document.getElementById('musicaFondo');
-const boton = document.getElementById('botonMusica');
-boton.addEventListener('click', () => {
-if (audio.paused) { audio.play(); boton.textContent = '⏸ Pausar música'; }
-else { audio.pause(); boton.textContent = '▶ Reproducir música'; }
-});
-</script>
+
+    <h1>Mi proyecto</h1>
+
+    <!-- Imagen -->
+    <img 
+        src="https://images.pexels.com/photos/40065053/pexels-photo-40065053.jpeg"
+        alt="Imagen del proyecto"
+        width="500"
+    >
+
+    <!-- Video -->
+    <video width="560" height="315" controls>
+        <source src="videos/video.mp4" type="video/mp4">
+        Tu navegador no admite videos.
+    </video>
+
+    <!-- Música -->
+    <audio id="musicaFondo" src="musica.mp3"></audio>
+
+    <button id="botonMusica">
+        ▶ Reproducir música
+    </button>
+
+    <script>
+        const audio = document.getElementById('musicaFondo');
+        const boton = document.getElementById('botonMusica');
+
+        boton.addEventListener('click', () => {
+
+            if (audio.paused) {
+                audio.play();
+                boton.textContent = '⏸ Pausar música';
+            } else {
+                audio.pause();
+                boton.textContent = '▶ Reproducir música';
+            }
+
+        });
+    </script>
+
 </body>
 </html>
